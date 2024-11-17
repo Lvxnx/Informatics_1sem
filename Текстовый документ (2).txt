@@ -1,0 +1,101 @@
+class Vector()
+    def __init__(self, x, y, z)
+      self.x = x
+      self.y = y
+      self.z = z
+        
+    
+    def __abs__(self)
+        return (self.x2 + self.y2 + self.z2)0.5
+    
+    def __add__(self, other)
+        if isinstance(other, Vector)
+            return Vector(self.x+other.x,self.y+other.y,self.z+other.z)
+        elif isinstance(other, int) or isinstance(other, float)
+            return Vector(self.x+other,self.y+other,self.z+other)
+    
+    def __radd__(self, other)
+            return self + other
+    
+    def __sub__(self, other)
+      if isinstance(other, Vector)
+          return Vector(self.x-other.x,self.y-other.y,self.z-other.z)
+      elif isinstance(other, int) or isinstance(other, float)
+          return Vector(self.x-other,self.y-other,self.z-other)
+            
+    def __rsub__(self, other)
+            return self - other
+            
+    def  __mul__(self, other)
+      if isinstance(other, Vector)
+          return Vector(self.xother.x,self.yother.y,self.zother.z)
+      elif isinstance(other, int) or isinstance(other, float)
+          return Vector(self.xother,self.yother,self.zother)
+          
+    def __rsub__(self, other)
+            return self  other
+            
+    def __str__(self)
+        return f'x = {self.x} y = {self.y} z = {self.z}'
+        
+  
+  
+v1 = Vector(1,2,3)
+print(isinstance(v1, Vector))
+print(v1.x - v1.y)
+v2 = Vector(2,3,4)
+v3 = 1 + v1
+sv = str(v3)
+print(sv)
+print(v1 + v2)
+print(v2 - v1)
+v3 = v3 - 1
+print(v3)
+print(v1  v2)
+v1 = v1  3.0
+print(v1)
+
+#task 1.1
+
+n = int(input())
+x = []
+y = []
+z = []
+
+for i in range(n)
+  v =Vector(input(), input(), input())
+  x.append(v.x)
+  y.append(v.y)
+  z.append(v.z)
+
+xc = sum(map(lambda xint(x) if x.isdigit() else 0,x))  5
+yc = sum(map(lambda xint(x) if x.isdigit() else 0,y))  5
+zc = sum(map(lambda xint(x) if x.isdigit() else 0,z))  5
+print ('coordinates of the center of mass ', xc, ' ', yc, ' ', zc)
+#task 1.2
+points = []
+for i in range(n)
+  points.append([int(x[i]), int(y[i])])
+print (points)
+res = 0
+
+for i in range(len(points))
+            x1, y1 = points[i]
+            for j in range(i+1, len(points))
+                x2, y2 = points[j]
+                for k in range(j+1, len(points))
+                    x3, y3 = points[k]
+                    res = max(res, abs(x1(y2-y3)+x2(y3-y1)+x3(y1-y2))2)
+                    print(res)
+print (res)
+for i in range(len(points))
+            x1, y1 = points[i]
+            for j in range(i+1, len(points))
+                x2, y2 = points[j]
+                for k in range(j+1, len(points))
+                    x3, y3 = points[k]
+                    if (res == abs(x1(y2-y3)+x2(y3-y1)+x3(y1-y2))2)
+                      print (x1, y1)
+                      print (x2, y2)
+                      print (x3, y3)
+
